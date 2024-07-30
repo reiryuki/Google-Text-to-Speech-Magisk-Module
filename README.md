@@ -19,7 +19,7 @@
 - Magisk or KernelSU installed
 
 ## Installation Guide & Download Link
-- Download here: https://www.pling.com/p/2183688/ choose the right module according to your device architecture, whether ARM64, ARM, X64, or X86.
+- Download the right module according to your device architecture, whether ARM64, ARM, X64, or X86 here: https://www.pling.com/p/2183688/
 - Install the module via Magisk app or KernelSU app or Recovery if Magisk installed
 - If you are using KernelSU, you need to disable Unmount Modules by Default in KernelSU app settings
 - Reboot
