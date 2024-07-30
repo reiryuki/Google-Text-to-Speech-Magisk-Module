@@ -1,8 +1,8 @@
 id=GoogleTTS
-name=Google Text to Speech ARM64
+name=Google Text to Speech
 version=v0.1
 versionCode=1
 author=Rei Ryuki the Fixer
-description=Text to speech accessibility app (com.google.android.tts) by Google Inc. for any ARM64 architecture Android 8 (SDK 26) and up.
+description=Text to speech accessibility app (com.google.android.tts) by Google Inc. for any Android 8 (SDK 26) and up.
 
 
