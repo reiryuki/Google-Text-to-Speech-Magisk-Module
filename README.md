@@ -14,6 +14,10 @@
 - https://t.me/androidryukimods/2443
 
 ## Requirements
+- arm64-v8a is for arm64-v8a architecture
+- armeabi-v7a is for armeabi-v7a architecture
+- x86_64 is for x86_64 architecture
+- x86 is for x86 architecture
 - Android 8 (SDK 26) and up
 - GApps installed
 - Magisk or KernelSU installed
@@ -27,23 +31,24 @@
 - To configure the settings, go to your Settings app, Accessiblity, Text-to-speech output.
 
 ## Optionals
-- Global: https://t.me/androidryukimodsdiscussions/60861
+- Global: https://t.me/ryukinotes/35
 
 ## Troubleshootings
-- Global: https://t.me/androidryukimodsdiscussions/29836
+- Global: https://t.me/ryukinotes/34
 
 ## Known Issue
-- I can't download offline voice data except English US in LineageOS ROM Android 14 QPR3 with BiTGApps
+- Can't download offline voice data except English US in LineageOS ROM Android 14 QPR3 with BiTGApps ROAR
 
 ## Support & Bug Report
 - https://t.me/androidryukimodsdiscussions/2618
 - If you don't do above, issues will be closed immediately
 
 ## Credits and Contributors
+- @HuskyDG
 - https://t.me/androidryukimodsdiscussions
 - You can contribute ideas about this Magisk Module here: https://t.me/androidappsportdevelopment
 
 ## Sponsors
-- https://t.me/androidryukimodsdiscussions/2619
+- https://t.me/ryukinotes/25
 
 

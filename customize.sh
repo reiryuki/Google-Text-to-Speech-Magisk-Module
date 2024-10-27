@@ -4,6 +4,10 @@ ui_print " "
 # var
 UID=`id -u`
 [ ! "$UID" ] && UID=0
+ABILIST=`grep_get_prop ro.product.cpu.abilist`
+if [ ! "$ABILIST" ]; then
+  ABILIST=`grep_get_prop ro.system.product.cpu.abilist`
+fi
 
 # log
 if [ "$BOOTMODE" != true ]; then
@@ -53,12 +57,18 @@ fi
 ui_print " "
 
 # architecture
-if [ "$ARCH" == arm64 ]; then
-  ui_print "- $ARCH architecture"
+if [ "$ABILIST" ]; then
+  ui_print "- $ABILIST architecture"
   ui_print " "
-else
-  ui_print "! Unsupported $ARCH architecture."
-  ui_print "  This module is only for arm64 architecture."
+fi
+NAME=arm64-v8a
+if ! echo "$ABILIST" | grep -q $NAME; then
+  if [ "$BOOTMODE" == true ]; then
+    ui_print "! This ROM doesn't support $NAME architecture"
+  else
+    ui_print "! This Recovery doesn't support $NAME architecture"
+    ui_print "  Try to install via Magisk app instead"
+  fi
   abort
 fi
 
@@ -115,7 +125,7 @@ if [ "`grep_prop data.cleanup $OPTIONALS`" == 1 ]; then
   ui_print " "
 #elif [ -d $DIR ]\
 #&& [ "$PREVMODNAME" != "$MODNAME" ]; then
-#  ui_print "- Different version detected"
+#  ui_print "- Different module name is detected"
 #  ui_print "  Cleaning-up $MODID data..."
 #  cleanup
 #  ui_print " "
@@ -126,12 +136,11 @@ extract_lib() {
 for APP in $APPS; do
   FILE=`find $MODPATH/system -type f -name $APP.apk`
   if [ -f `dirname $FILE`/extract ]; then
-    rm -f `dirname $FILE`/extract
     ui_print "- Extracting..."
-    DIR=`dirname $FILE`/lib/"$ARCH"
+    DIR=`dirname $FILE`/lib/"$ARCHLIB"
     mkdir -p $DIR
     rm -rf $TMPDIR/*
-    DES=lib/"$ABI"/*
+    DES=lib/"$ABILIB"/*
     unzip -d $TMPDIR -o $FILE $DES
     cp -f $TMPDIR/$DES $DIR
     ui_print " "
@@ -195,10 +204,31 @@ APPS="`ls $MODPATH/system/priv-app`
       `ls $MODPATH/system_ext/priv-app`
       `ls $MODPATH/system_ext/app`
       `ls $MODPATH/vendor/app`"
+ARCHLIB=arm64
+ABILIB=arm64-v8a
 extract_lib
+ARCHLIB=arm
+if echo "$ABILIST" | grep -q armeabi-v7a; then
+  ABILIB=armeabi-v7a
+  extract_lib
+elif echo "$ABILIST" | grep -q armeabi; then
+  ABILIB=armeabi
+  extract_lib
+else
+  ABILIB=armeabi-v7a
+  extract_lib
+fi
+ARCHLIB=x64
+ABILIB=x86_64
+extract_lib
+ARCHLIB=x86
+ABILIB=x86
+extract_lib
+rm -f `find $MODPATH/system -type f -name extract`
 # hide
 hide_oat
-APPS="$APPS SpeechServicesbyGoogle GoogleSpeechServices"
+APPS="$APPS SpeechServicesbyGoogle
+      GoogleSpeechServices"
 hide_app
 
 # unmount
