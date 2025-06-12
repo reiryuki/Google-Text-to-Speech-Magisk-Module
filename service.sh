@@ -33,7 +33,7 @@ fi
 # grant
 PKG=com.google.android.tts
 if appops get $PKG > /dev/null 2>&1; then
-  pm grant $PKG android.permission.RECORD_AUDIO
+  pm grant --all-permissions $PKG
   appops set $PKG SYSTEM_ALERT_WINDOW allow
   if [ "$API" -ge 33 ]; then
     appops set $PKG ACCESS_RESTRICTED_SETTINGS allow

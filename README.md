@@ -18,7 +18,7 @@
 - armeabi-v7a is for armeabi-v7a architecture
 - x86_64 is for x86_64 architecture
 - x86 is for x86 architecture
-- Android 8 (SDK 26) and up
+- Android 8.0 (SDK 26) and up
 - GApps installed
 - Magisk or KernelSU installed
 
@@ -40,7 +40,7 @@
 - Can't download offline voice data except English US in LineageOS ROM Android 14 QPR3 with BiTGApps ROAR
 
 ## Support & Bug Report
-- https://t.me/androidryukimodsdiscussions/2618
+- https://t.me/ryukinotes/54
 - If you don't do above, issues will be closed immediately
 
 ## Credits and Contributors
