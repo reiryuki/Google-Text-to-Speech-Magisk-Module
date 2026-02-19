@@ -20,12 +20,12 @@
 - x86 is for x86 architecture
 - Android 8.0 (SDK 26) and up
 - GApps installed
-- Magisk or KernelSU installed
+- Magisk or Kitsune Mask or KernelSU or Apatch installed
 
 ## Installation Guide & Download Link
+- If you are using KernelSU, you need to disable Unmount Modules by Default in KernelSU app settings and install https://github.com/KernelSU-Modules-Repo/meta-overlayfs first
 - Download the right module according to your device architecture, whether ARM64, ARM, X64, or X86 here: https://www.pling.com/p/2183688/
-- Install the module via Magisk app or KernelSU app or Recovery if Magisk installed
-- If you are using KernelSU, you need to disable Unmount Modules by Default in KernelSU app settings
+- Install the module via Magisk app or Kitsune Mask app or KernelSU app or Apatch app or Recovery if Magisk or Kitsune Mask installed
 - Reboot
 - If you are using KernelSU, you need to allow superuser list manually all package name listed in package.txt (and your home launcher app also) (enable show system apps) and reboot afterwards
 - To configure the settings, go to your Settings app, Accessiblity, Text-to-speech output.
