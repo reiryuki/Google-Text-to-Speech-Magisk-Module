@@ -1,8 +1,8 @@
 id=GoogleTTS
-name=Google Text to Speech
-version=v0.4
-versionCode=4
+name=Google Speech
+version=v0.5
+versionCode=5
 author=Rei Ryuki the Fixer
-description=Text to speech accessibility app (com.google.android.tts) by Google LLC for any Android 8.0 (SDK 26) and up.
+description=Speech app (com.google.android.tts) by Google LLC for any Android 8.0 (SDK 26) and up.
 
 
