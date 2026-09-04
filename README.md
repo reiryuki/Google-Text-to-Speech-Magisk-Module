@@ -12,6 +12,11 @@ https://apkmirror.com com.google.android.tts by Google LLC
 
 ## Changelog
 
+v0.6
+- Prepare /storage/emulated/"$UID"/Android/data/$PKG/ directories
+- Resets module folders/files permissions at post-fs-data
+- Move _uninstall.log to /data/adb/logs/
+
 v0.5
 - Upgrade APK version googletts.google-speech-apk_20250623.02_p2.775877377 (210573084) for arm64-v8a variant
 
@@ -39,12 +44,12 @@ https://t.me/androidryukimods/2443
 - Magisk or Kitsune Mask or KernelSU or Apatch installed
 
 ## Installation Guide & Download Link
-- If you are using KernelSU, you need to disable Unmount Modules by Default in KernelSU app settings and install https://github.com/KernelSU-Modules-Repo/meta-overlayfs or https://github.com/KernelSU-Modules-Repo/magic_mount_rs or https://github.com/KernelSU-Modules-Repo/hybrid_mount first depending on ROM compatibility
+- If you are using KernelSU, you need to disable Unmount Modules by Default in KernelSU app settings and install https://github.com/KernelSU-Modules-Repo/meta-overlayfs or https://github.com/KernelSU-Modules-Repo/magic_mount_rs or https://github.com/KernelSU-Modules-Repo/hybrid_mount or https://github.com/maxsteeel/nomount first depending on ROM compatibility
 - Download the right module according to your device architecture:
-  - arm64-v8a: https://bicolink.com/jQ4so
-  - armeabi-v7a: (Please tell me if you need it)
-  - x86_64: (Please tell me if you need it)
-  - x86: (Please tell me if you need it)
+  - arm64-v8a: https://github.com/reiryuki/Google-Text-to-Speech-Magisk-Module
+  - armeabi-v7a: https://github.com/reiryuki/Google-Text-to-Speech-Magisk-Module
+  - x86_64: https://github.com/reiryuki/Google-Text-to-Speech-Magisk-Module
+  - x86: https://github.com/reiryuki/Google-Text-to-Speech-Magisk-Module
 - Install the module via Magisk app or Kitsune Mask app or KernelSU app or Apatch app or Recovery if Magisk or Kitsune Mask installed
 - Reboot
 - If you are using KernelSU, you need to allow superuser list manually all package name listed in package.txt (and your home launcher app also) (enable show system apps) and reboot afterwards
@@ -59,9 +64,6 @@ Global: https://t.me/ryukinotes/35
 ## Troubleshootings
 Global: https://t.me/ryukinotes/34
 
-## Known Issue
-Can't download offline voice data except English US in LineageOS ROM Android 14 QPR3 with BiTGApps ROAR
-
 ## Support & Bug Report
 - https://t.me/ryukinotes/54
 - If you don't do above, issues will be closed immediately
@@ -69,7 +71,7 @@ Can't download offline voice data except English US in LineageOS ROM Android 14 
 ## Credits and Contributors
 - @HuskyDG
 - https://t.me/androidryukimodsdiscussions
-- You can contribute ideas about this Magisk Module here: https://t.me/androidappsportdevelopment
+- https://t.me/androidappsportdevelopment
 
 ## Sponsors
 https://t.me/ryukinotes/25
